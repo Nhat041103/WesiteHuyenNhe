@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tặng em nè</title>
+    <link type="text/css" href="../static/css/style.css" rel="stylesheet" />
+    <link href="../static/css/index.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        html, body {
+            height: 100%;
+            color: #00FF00;
+        }
+        body {
+            background: url(https://s1.ax1x.com/2020/07/30/ansR4x.jpg) center center;
+            background-size: cover;
+        }
+        #message {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 24px;
+            font-family: 'Arial', sans-serif; /* Chọn font chữ nổi bật */
+            text-align: center;
+            display: none; /* Ẩn chữ khi chưa nhấn nút */
+            z-index: 1000; /* Đảm bảo chữ nổi bật hơn */
+        }
+        button {
+            width: 200px;
+            padding: 8px;
+            background-color: blueviolet;
+            color: aliceblue;
+            border-radius: 10px; /* future proofing */
+            text-align: center;
+            border: 1px solid transparent;
+            font-weight: 900;
+            font-size: 125%;
+        }
+    </style>
+</head>
+
+<body>
+    <audio id="background-audio" autoplay loop preload="auto">
+        <source src="DemDomDomVaEm-AniFace.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div class="box">
+        <ul class="minbox">
+            <li><img src="../static/images/01.jpg" width="100" height="100"></li>
+            <li><img src="../static/images/02.jpg" width="100" height="100"></li>
+            <li><img src="../static/images/03.jpg" width="100" height="100"></li>
+            <li><img src="../static/images/04.jpg" width="100" height="100"></li>
+            <li><img src="../static/images/05.jpg" width="100" height="100"></li>
+            <li><img src="../static/images/06.jpg" width="100" height="100"></li>
+        </ul>
+        <ol class="maxbox">
+            <li><img src="../static/images/1.jpg" width="400" height="400"></li>
+            <li><img src="../static/images/2.jpg" width="400" height="400"></li>
+            <li><img src="../static/images/3.jpg" width="400" height="400"></li>
+            <li><img src="../static/images/4.jpg" width="400" height="400"></li>
+            <li><img src="../static/images/5.jpg" width="400" height="400"></li>
+            <li><img src="../static/images/6.jpg" width="400" height="400"></li>
+        </ol>
+    </div>
+
+    <form action="/1314" method="post">
+        <p></p>
+        <button type="button" onclick="playAudio(); showMessage();">
+            Final surprise ໒(⊙ᴗ⊙)७✎▤
+        </button>
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+        function showMessage() {
+            const message = "Chúc em một ngày 20/10 thật vui vẻ và ý nghĩa! Mong rằng hôm nay sẽ tràn ngập những điều ngọt ngào và niềm vui. Hãy luôn tự tin và xinh đẹp như chính em, và đừng quên rằng em là một bông hoa quý giá trong cuộc sống này. Chúc em luôn nhận được tình yêu thương và sự trân trọng từ những người xung quanh. Hy vọng em sẽ có một ngày thật tuyệt vời, đầy ắp những kỷ niệm đẹp!";
+            let index = 0;
+            const messageDiv = document.getElementById("message");
+            messageDiv.innerHTML = ""; // Clear previous message
+            messageDiv.style.display = "block"; // Hiện chữ khi nhấn nút
+
+            const interval = setInterval(() => {
+                if (index < message.length) {
+                    messageDiv.innerHTML += message.charAt(index);
+                    index++;
+                } else {
+                    clearInterval(interval); // Stop the interval when message is complete
+                }
+            }, 50); // Adjust the speed of the animation here (100ms per character)
+        }
+
+        function playAudio() {
+            var audio = document.getElementById('background-audio');
+            audio.play();
+        }
+    </script>
+</body>
+</html>
